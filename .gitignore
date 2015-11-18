@@ -1,28 +1,45 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 
-# Precompiled Headers
-*.gch
-*.pch
+using namespace std;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+int main ()
+{
+int d,m,y,i;
+bool biciesto = false;
+cout<<"introduce el dia: ";
+cin>>d;
+cout<<"introduce el mes: ";
+cin>>m;
+cout<<"introduce el ano: ";
+cin>>y;
+if ((y % 4 == 0)&& (y%100!=100)||(y%4==0))
+  biciesto = true;
+   if( (d>0)&&(d<32)&&(m>0)&&(m<13)&&(y>0))
+{
+if(m==1||m==3||m==5||m==7||m==8||m==10||m==12)
+ cout<<"\nes bisiesto";
+ else
+   if(m==2&& d<30 && biciesto)
+     cout<<"\nfecha valida";
+    else
+      if(m==2&& d<29 && !biciesto)
+        cout<<"\nfecha valida";
+	   else
+         if(m !=2 && d<31)
+           cout<<"\nfecha valida";
+         else 
+           cout<<"\nfecha no valida"; 
+}
 
-# Fortran module files
-*.mod
+else 
+cout<<"\nfecha invalida";
+_getch();
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
 
-# Executables
-*.exe
-*.out
-*.app
+}
+
+
